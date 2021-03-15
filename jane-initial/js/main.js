@@ -19,6 +19,9 @@ function setup () {
 function generativeTexture () {
   // this is the function with the code for creating the texture
   // first it creates a random color
+  //pointLight(255,0,200,0)
+  pointLight(255,0,0,-200,50,0)
+  directionalLight(255,255,255,-10,1000,100)
   if(mouseIsPressed) {
   //   let r = random(255)
   // let g = random(255)
@@ -37,6 +40,7 @@ function generativeTexture () {
 }
 function draw () {
   background(100,0,200) // create grey background color
+
   rotateX(frameCount * 0.01) // rotates the obj on the X axis
   rotateY(frameCount * 0.01) // rotates the obj on the Y axis
   generativeTexture() // updates the texture
