@@ -1,0 +1,38 @@
+let obj // 3d object
+let tex // texture
+
+function preload () {
+  // Load 3D model with normalise parameter set to true
+  obj = loadModel('models/bird.obj', true)
+}
+
+function setup () {
+  // create a 3D canvas that matches the size of the window
+  createCanvas(innerWidth, innerHeight, WEBGL)
+  // create a drawing canvas to use as a texture
+  tex = createGraphics(400, 400)
+}
+
+function generativeTexture () {
+  // this is the function with the code for creating the texture
+  // first it creates a random color
+  let r = random(255)
+  let g = random(255)
+  let b = random(255)
+  tex.fill(r, g, b)
+  // then it creates a random circle of that color
+  let x = random(0, width)
+  let y = random(0, height)
+  let s = random(50, 100)
+  tex.ellipse(x, y, s)
+}
+
+function draw () {
+  background(200) // create grey background color
+  rotateX(frameCount * 0.01) // rotates the obj on the X axis
+  rotateY(frameCount * 0.01) // rotates the obj on the Y axis
+  generativeTexture() // updates the texture
+  scale(4) // changes the size of the obj
+  texture(tex) // adds the texture to the obj
+  model(obj) // draws the obj to the screen
+}
