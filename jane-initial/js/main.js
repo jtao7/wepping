@@ -20,8 +20,14 @@ function generativeTexture () {
   // this is the function with the code for creating the texture
   // first it creates a random color
   //pointLight(255,0,200,0)
+  // let dx= mouseX -width/2; let dy= mouseY-height/2;
+  // let dv= createVector(dx,dy,0); dv.normalize();
+  let dirX = (mouseX / width - 0.5) * 2;
+  let dirY = (mouseY / height - 0.5) * 2;
+  directionalLight(250, 250, 250, -dirX, -dirY, -1);
   pointLight(255,0,0,-200,50,0)
-  directionalLight(255,255,255,-10,1000,100)
+  // pointLight(255,255,0,mouseX,mouseY,)
+  //directionalLight(255,255,255,-10,1000,100)
   if(mouseIsPressed) {
   //   let r = random(255)
   // let g = random(255)
