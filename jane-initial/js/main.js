@@ -4,7 +4,7 @@ let tex // texture
 function preload () {
   // Load 3D model with normalise parameter set to true
   //noStroke()
-  obj = loadModel('models/bg_ring.obj', true)
+  obj = loadModel('jane-initial/models/bg_ring.obj', true)
 
 }
 
