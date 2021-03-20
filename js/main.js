@@ -90,7 +90,7 @@ function draw () {
   light()
   rotateX(110)
   // rotateX(frameCount * 0.01) // rotates the obj on the X axis
-  rotateY(frameCount * 0.01) // rotates the obj on the Y axis
+   // rotates the obj on the Y axis
   //// var x= map(noise(xoff), 0, 1, 0, width)
   //// xoff += 0.001
   //// box(x,20,10)
@@ -108,16 +108,21 @@ function draw () {
   // rotateY(frameCount * i*0.001) // rotates the obj on the Y axis
   // translate(i,100,i*10)
   // translate(random(100),random(100),50)
-
+  push()
   //rotateX(0.5)
-
+  rotateY(frameCount * 0.01)
   model(obj0)
-  rotateY(1)
-  rotateX(0.7)
-  scale(0.8)
-  translate(40,10,50)
+  pop()
+  rotateY(0.8)
+  rotateX(0.9)
+  scale(1.8)
+  translate(0,100,70)
   model(obj2)
-
+  translate(-350,-30,0)
+  rotateX(4.7)
+  rotateY(4.3)
+  scale(1.9)
+  model(obj2)
   //box(100,100,100)
   // translate(1,-50,20)
   // model(obj0)
