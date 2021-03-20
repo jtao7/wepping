@@ -1,6 +1,7 @@
  // let objs =[]// 3d object
  //var mm= ['obj1','obj2']
 let obj0
+var xoff= 0
 
 function preload () {
   // Load 3D model with normalise parameter set to true
@@ -55,17 +56,32 @@ function generativeTexture () {
 function draw () {
   background(100,0,200) // create grey background color
   light()
-  rotateX(frameCount * 0.01) // rotates the obj on the X axis
-  rotateY(frameCount * 0.01) // rotates the obj on the Y axis
+
+  // rotateX(frameCount * 0.01) // rotates the obj on the X axis
+  // rotateY(frameCount * 0.01) // rotates the obj on the Y axis
+  var x= map(noise(xoff), 0, 1, 0, width)
+  xoff += 0.001
+  box(x,20,10)
   generativeTexture() // updates the texture
   scale(1)
-  for(let i=0; i<50; i+=10){
+  for(let i=0; i<3; i+=1){
    // changes the size of the obj
   texture(tex) // adds the texture to the obj
   noStroke()
   //var rand = Math.floor(Math.random()*obj.length)
-  translate(i*3,20-i,20-i*2)
-  model(obj0)}
+  // rotateX(frameCount * i*0.001) // rotates the obj on the X axis
+  // rotateY(frameCount * i*0.001) // rotates the obj on the Y axis
+  translate(i*10,100,i*10)
+  // translate(random(100),random(100),50)
+  model(obj0)
+  translate(1,-50,20)
+  model(obj0)
+}
+
+
+
+
+
   // let rand= random(objs)
   // model(rand)
    // draws the obj to the screen
