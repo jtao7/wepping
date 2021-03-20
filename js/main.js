@@ -2,6 +2,7 @@
  //var mm= ['obj1','obj2']
 let obj0
 let obj2
+let obj3
 //var xoff= 0
 var t;
 
@@ -14,6 +15,7 @@ function preload () {
   //noStroke()
   obj0 = loadModel('models/Dog.obj', true)
   obj2 = loadModel('models/flower.obj', true)
+  obj3 = loadModel('models/gg.obj',true)
   // objs = [obj0,obj1]
 }
 
@@ -118,11 +120,25 @@ function draw () {
   scale(1.8)
   translate(0,100,70)
   model(obj2)
+  push()
   translate(-350,-30,0)
   rotateX(4.7)
   rotateY(4.3)
   scale(1.9)
   model(obj2)
+  pop()
+  // push()
+  stroke(255,10)
+  //noFill()
+  //rotateZ(0.3)
+  //rotateX(1)
+  //rotateX(2)
+  rotateZ(90*0.01)
+  rotateX(90*0.2)
+  translate(90,70,0)
+  scale(2)
+  model(obj3)
+  // pop()
   //box(100,100,100)
   // translate(1,-50,20)
   // model(obj0)
