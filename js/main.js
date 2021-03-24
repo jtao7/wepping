@@ -1,6 +1,7 @@
  // let objs =[]// 3d object
  //var mm= ['obj1','obj2']
 let obj0
+let obj1
 let obj2
 let obj3
 //var xoff= 0
@@ -8,15 +9,13 @@ var t;
 
 
 
-
-
 function preload () {
   // Load 3D model with normalise parameter set to true
   //noStroke()
   obj0 = loadModel('models/Dog.obj', true)
+  obj1 = loadModel('models/Head.obj', true)
   obj2 = loadModel('models/flower.obj', true)
   obj3 = loadModel('models/gg.obj',true)
-  // objs = [obj0,obj1]
 }
 
 function setup () {
@@ -27,7 +26,6 @@ function setup () {
   //pixelDensity(2)
   tex = createGraphics(400, 400)
   tex.background(random(0,40),random(50,150),random(40,100))
-
   t = 0;
 }
 
@@ -39,14 +37,12 @@ function light (){
   let dirY = (mouseY / height - 0.5) * 2;
   directionalLight(250, 250, 250, -dirX, -dirY, -1);
   pointLight(100,20,50,-200,50,0)
-  // pointLight(255,255,0,mouseX,mouseY,)
-  //directionalLight(255,255,255,-10,1000,100)
 }
 
 
 
 function draw () {
-  background(100,0,200) // create grey background color
+  backgroundtex () // create purple background color
   light()
   rotateX(110)
   // rotateX(frameCount * 0.01) // rotates the obj on the X axis
@@ -57,27 +53,37 @@ function draw () {
 
   generativeTexture() // updates the texture
 
-  // for(let i=0; i<3; i+=1){
-   // changes the size of the obj
-   scale(2.5)
+
+   scale(2.5) // changes the size of the obj
    noStroke()
   texture(tex) // adds the texture to the obj
 
-  //var rand = Math.floor(Math.random()*obj.length)
-  // rotateX(frameCount * i*0.001) // rotates the obj on the X axis
-  // rotateY(frameCount * i*0.001) // rotates the obj on the Y axis
-  // translate(i,100,i*10)
-  // translate(random(100),random(100),50)
+  if (mouseButton == LEFT) {
   push()
   //rotateX(0.5)
   rotateY(frameCount * 0.01)
-  model(obj0)
+  model(obj0)  // dog object
   pop()
+} else if (mouseButton == RIGHT) {
+  push()
+  scale(1)
+  rotateY(frameCount * 0.01)
+  model(obj1)
+  pop()
+}else {
+  push()
+  //rotateX(0.5)
+  rotateY(frameCount * 0.01)
+  model(obj0)  // dog object
+  pop()
+}
+
   rotateY(0.8)
   rotateX(0.9)
   scale(1.8)
   translate(0,100,70)
   model(obj2)
+
   push()
   translate(-350,-30,0)
   rotateX(4.7)
@@ -85,33 +91,18 @@ function draw () {
   scale(1.9)
   model(obj2)
   pop()
-  // push()
+
+
   stroke(255,10)
-  //noFill()
-  //rotateZ(0.3)
-  //rotateX(1)
   rotateY(100)
   rotateZ(90*0.01)
   rotateX(90*0.2)
   translate(-140,-90,0)
   scale(2)
-  model(obj3)
-  // pop()
+  model(obj3) // draws the obj to the screen
+
+
   //box(100,100,100)
-  // translate(1,-50,20)
-  // model(obj0)
-// }
-
-
-
-
-
-  // let rand= random(objs)
-  // model(rand)
-   // draws the obj to the screen
-
-  //
-  //
 
 
 }
