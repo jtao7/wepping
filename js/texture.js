@@ -1,25 +1,10 @@
 function generativeTexture () {
   // this is the function with the code for creating the texture
-  // first it creates a random color
-  // if(mouseIsPressed) {
-  // //   let r = random(255)
-  // // let g = random(255)
-  // let r = mouseX
-  // let g = mouseY
-  // let b = random(255)
-  // tex.fill(r, g, b)
-  // // then it creates a random circle of that color
-  // let x = random(0, width)
-  // let y = random(0, height)
-  // let s = random(50, 100)
-  // //noStroke()
-  // //Stroke(1)
-  // tex.ellipse(x, y, s)}
-  // tex.background(255);
-  // for(i=0)
+
 
   // //beginShape()
   tex.ellipse(random(20,80),random(30,100),mouseX)
+  //make ellipse && triggering blue color with mouseX
   tex.noFill();
   tex.strokeWeight(random(0,5))
   tex.stroke(mouseX,random(20,180),random(100,200));
@@ -36,5 +21,33 @@ function generativeTexture () {
   // tex.bezier(x2, y2, x3, y4, x1, y1, x4, y3)
   tex.bezier(x4, y2, x1, y3, x3, y1, x4, y3)
   t += 0.8;
+
+  //make lines with noise & triggering red color storke with mouseX
   // //endShape()
 }
+
+
+
+
+
+
+// add more textures
+
+
+// first it creates a random color
+// if(mouseIsPressed) {
+// //   let r = random(255)
+// // let g = random(255)
+// let r = mouseX
+// let g = mouseY
+// let b = random(255)
+// tex.fill(r, g, b)
+// // then it creates a random circle of that color
+// let x = random(0, width)
+// let y = random(0, height)
+// let s = random(50, 100)
+// //noStroke()
+// //Stroke(1)
+// tex.ellipse(x, y, s)}
+// tex.background(255);
+// for(i=0)

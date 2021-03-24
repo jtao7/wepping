@@ -1,5 +1,3 @@
- // let objs =[]// 3d object
- //var mm= ['obj1','obj2']
 let obj0
 let obj1
 let obj2
@@ -11,7 +9,6 @@ var t;
 
 function preload () {
   // Load 3D model with normalise parameter set to true
-  //noStroke()
   obj0 = loadModel('models/Dog.obj', true)
   obj1 = loadModel('models/Head.OBJ', true)
   obj2 = loadModel('models/flower.obj', true)
@@ -31,8 +28,6 @@ function setup () {
 
 
 function light (){
-  // let dx= mouseX -width/2; let dy= mouseY-height/2;
-  // let dv= createVector(dx,dy,0); dv.normalize();
   let dirX = (mouseX / width - 0.5) * 2;
   let dirY = (mouseY / height - 0.5) * 2;
   directionalLight(250, 250, 250, -dirX, -dirY, -1);
@@ -62,21 +57,21 @@ function draw () {
   push()
   scale(0.8)
   rotateY(frameCount * 0.01)
-  model(obj1)  // dog object
+  model(obj1)  // human object
   pop()
 } else if (mouseButton == RIGHT) {
   push()
   rotateY(frameCount * 0.01)
-  model(obj0)
+  model(obj0) // dog object
   pop()
 }else {
   push()
   //rotateX(0.5)
   rotateY(frameCount * 0.01)
-  model(obj0)  // dog object
+  model(obj0)  // human object
   pop()
 }
-
+  // the sub objects' rotation & position 
   rotateY(0.8)
   rotateX(0.9)
   scale(1.8)
@@ -92,7 +87,7 @@ function draw () {
   pop()
 
 
-  stroke(255,10)
+  stroke(255,10) // make a stroke on the model
   rotateY(100)
   rotateZ(90*0.01)
   rotateX(90*0.2)
