@@ -93,7 +93,7 @@ function draw () {
   rotateY(100)
   rotateZ(90*0.01)
   rotateX(90*0.2)
-  translate(-70,-90,0)
+  translate(-140,-90,0)
   scale(2)
   model(obj3)
   // pop()
