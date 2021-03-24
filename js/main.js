@@ -60,15 +60,14 @@ function draw () {
 
   if (mouseButton == LEFT) {
   push()
-  //rotateX(0.5)
+  scale(0.8)
   rotateY(frameCount * 0.01)
-  model(obj0)  // dog object
+  model(obj1)  // dog object
   pop()
 } else if (mouseButton == RIGHT) {
   push()
-  scale(1)
   rotateY(frameCount * 0.01)
-  model(obj1)
+  model(obj0)
   pop()
 }else {
   push()
