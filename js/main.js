@@ -88,7 +88,6 @@ function generativeTexture () {
 
 function draw () {
   background(100,0,200) // create grey background color
-
   light()
   rotateX(110)
   // rotateX(frameCount * 0.01) // rotates the obj on the X axis
@@ -132,10 +131,10 @@ function draw () {
   //noFill()
   //rotateZ(0.3)
   //rotateX(1)
-  //rotateX(2)
+  rotateY(100)
   rotateZ(90*0.01)
   rotateX(90*0.2)
-  translate(90,70,0)
+  translate(-70,-90,0)
   scale(2)
   model(obj3)
   // pop()
