@@ -54,12 +54,14 @@ function draw () {
   texture(tex) // adds the texture to the obj
 
   if (mouseButton == LEFT) {
+  background(100,0,150)
   push()
   scale(0.8)
   rotateY(frameCount * 0.01)
   model(obj1)  // human object
   pop()
 } else if (mouseButton == RIGHT) {
+
   push()
   rotateY(frameCount * 0.01)
   model(obj0) // dog object
@@ -71,7 +73,7 @@ function draw () {
   model(obj0)  // human object
   pop()
 }
-  // the sub objects' rotation & position 
+  // the sub objects' rotation & position
   rotateY(0.8)
   rotateX(0.9)
   scale(1.8)
