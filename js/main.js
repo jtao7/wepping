@@ -61,14 +61,12 @@ function draw () {
   model(obj1)  // human object
   pop()
 } else if (mouseButton == RIGHT) {
-
   push()
   rotateY(frameCount * 0.01)
   model(obj0) // dog object
   pop()
 }else {
   push()
-  //rotateX(0.5)
   rotateY(frameCount * 0.01)
   model(obj0)  // human object
   pop()
