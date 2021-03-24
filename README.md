@@ -7,4 +7,5 @@ Also, because of the pandemic, people rarely go outside and enjoy artworks. Rath
 ![screen shot](readme_files/dog.png)
 ![screen shot](readme_files/head.png)
 
-[this is a link](https://jtao7.github.io/p5.js_3dproject/)
+Click here to play
+[Wepping](https://jtao7.github.io/p5.js_3dproject/)

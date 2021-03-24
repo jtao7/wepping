@@ -13,7 +13,7 @@ function preload () {
   // Load 3D model with normalise parameter set to true
   //noStroke()
   obj0 = loadModel('models/Dog.obj', true)
-  obj1 = loadModel('models/Head.obj', true)
+  obj1 = loadModel('models/Head.OBJ', true)
   obj2 = loadModel('models/flower.obj', true)
   obj3 = loadModel('models/gg.obj',true)
 }
