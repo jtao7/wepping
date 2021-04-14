@@ -31,7 +31,7 @@ function setup () {
   angleMode(DEGREES)
   // textAlign(CENTER);
   // text('Click Me!', width / 2, height / 2);
-  alert("left/right button = change the models\nmouse position = light's direction & textures")
+  alert("left/middle button = change the models\nmouse position = light's direction & textures")
 }
 
 
