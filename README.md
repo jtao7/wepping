@@ -11,5 +11,5 @@ All animals and people have own colors and personalities, even though they look 
 2. Mouse position = the direction of light, add textures & colors
 
 
-![screen shot](readme_files/dog.png)
-![screen shot](readme_files/head_.png)
+![screen shot](readme_files/dog_changed.png)
+![screen shot](readme_files/head_changed.png)
