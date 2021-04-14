@@ -83,53 +83,6 @@ function draw () {
   //noStroke()
   model(obj4)
   pop()
-} else if (mouseButton == RIGHT) {
-  push()
-  //scale(2.5)
-  rotateY(angle)
-  model(obj0) // dog object
-  pop()
-  push()
-  shader(theShader)
-
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(-40,300,-50)
-  rotateY(190)
-  //noStroke()
-  model(obj0)
-  pop()  //middle dog
-
-  push()
-  shader(theShader)
-
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(-40,310,-50)
-  rotateY(180)
-  //noStroke()
-  translate(450,-100,0)
-  model(obj0)
-  pop()  //right dog
-
-
-  pop()
-  push()
-  shader(theShader)
-
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(400,200,-50)
-  rotateY(180)
-  //noStroke()
-  model(obj0)
-  pop()  //left dog
 
 }else {
   push()
