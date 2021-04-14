@@ -1,3 +1,5 @@
+// from book of shaders
+// https://thebookofshaders.com/13/
 // Author @patriciogv - 2015
 // http://patriciogonzalezvivo.com
 
@@ -14,6 +16,7 @@ float random (in vec2 _st) {
                          vec2(12.9898,78.233)))*
         43758.5453123);
 }
+varying vec2 vTexCoord;
 
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
@@ -78,5 +81,5 @@ void main() {
                 vec3(0.666667,1,1),
                 clamp(length(r.x),0.0,1.0));
 
-    gl_FragColor = vec4((f*f*f+.6*f*f+.5*f)*color,1.);
+    gl_FragColor = vec4((f*f*f+.6*f*f+.5*f)*color,1.0);
 }

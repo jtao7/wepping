@@ -1,18 +1,22 @@
+let theShader
 let obj0
 let obj1
 let obj2
 let obj3
+let obj4
 //var xoff= 0
 var t
 let angle =0
 
 
 function preload () {
+  theShader = loadShader('texture1.vert', 'texture1.frag')
   // Load 3D model with normalise parameter set to true
   obj0 = loadModel('models/Dog.obj', true)
   obj1 = loadModel('models/Head.OBJ', true)
   obj2 = loadModel('models/flower.obj', true)
   obj3 = loadModel('models/gg.obj',true)
+  obj4 = loadModel('models/bg_ring_.obj',true)
 }
 
 function setup () {
@@ -25,6 +29,9 @@ function setup () {
   tex.background(random(0,40),random(50,150),random(40,100))
   t = 0;
   angleMode(DEGREES)
+  // textAlign(CENTER);
+  // text('Click Me!', width / 2, height / 2);
+  alert("left/right button = change the models\nmouse position = light's direction & textures")
 }
 
 
@@ -38,6 +45,7 @@ function light (){
 
 
 function draw () {
+
   backgroundtex () // create purple background color
   light()
   //////rotateX(110)
@@ -62,18 +70,116 @@ function draw () {
   rotateY(angle)
   model(obj1)  // human object
   pop()
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.6)
+  translate(-10,-130,-50)
+  rotateX(-10)
+  rotateZ(50)
+  //noStroke()
+  model(obj4)
+  pop()
 } else if (mouseButton == RIGHT) {
   push()
   //scale(2.5)
   rotateY(angle)
   model(obj0) // dog object
   pop()
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(-40,300,-50)
+  rotateY(190)
+  //noStroke()
+  model(obj0)
+  pop()  //middle dog
+
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(-40,310,-50)
+  rotateY(180)
+  //noStroke()
+  translate(450,-100,0)
+  model(obj0)
+  pop()  //right dog
+
+
+  pop()
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(400,200,-50)
+  rotateY(180)
+  //noStroke()
+  model(obj0)
+  pop()  //left dog
+
 }else {
   push()
   //scale(2.5)
   rotateY(angle)
   model(obj0)  // dog object
   pop()
+
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(-40,300,-50)
+  rotateY(190)
+  //noStroke()
+  model(obj0)
+  pop()  //middle dog
+
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(-40,310,-50)
+  rotateY(180)
+  //noStroke()
+  translate(450,-100,0)
+  model(obj0)
+  pop()  //right dog
+
+
+  pop()
+  push()
+  shader(theShader)
+
+  theShader.setUniform("u_resolution", [width, height])
+  theShader.setUniform("u_time", millis() / 1000.0)
+  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+  scale(0.3)
+  translate(400,200,-50)
+  rotateY(180)
+  //noStroke()
+  model(obj0)
+  pop()  //left dog
+
 }
   // the sub objects' rotation & position
 
