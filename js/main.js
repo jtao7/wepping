@@ -111,7 +111,7 @@ function draw () {
   rotateY(-140)
   rotateX(40)
   rotateZ(-20)
-  translate(40,100,100)
+  translate(20,100,100)
   model(obj2) // right
   pop()
 
