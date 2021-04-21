@@ -5,7 +5,7 @@ let obj2
 let obj3
 let obj4
 //var xoff= 0
-var t
+let t
 let angle =0
 
 
@@ -64,95 +64,79 @@ function draw () {
   texture(tex) // adds the texture to the obj
 
   if (mouseButton == LEFT) {
-  background(100,0,150)
-  push()
-  scale(0.8)
-  rotateY(angle)
-  model(obj1)  // human object
-  pop()
-  push()
-  shader(theShader)
+    background(100,0,150)
+    push()
+    scale(0.8)
+    rotateY(angle)
+    model(obj1)  // human object
+    pop()
 
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.6)
-  translate(-10,-130,-50)
-  rotateX(-10)
-  rotateZ(50)
-  //noStroke()
-  model(obj4)
-  pop()
+    push()
+    shader(theShader)
+    theShader.setUniform("u_resolution", [width, height])
+    theShader.setUniform("u_time", millis() / 1000.0)
+    theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+    scale(0.6)
+    translate(-10,-130,-50)
+    rotateX(-10)
+    rotateZ(50)
+    //noStroke()
+    model(obj4) //necklace
+    pop()
+  }
+  else {
+    push()
+    //scale(2.5)
+    rotateY(angle)
+    model(obj0)  // dog object
+    pop()
 
-}else {
-  push()
-  //scale(2.5)
-  rotateY(angle)
-  model(obj0)  // dog object
-  pop()
+    push()
+    shader(theShader)
+    theShader.setUniform("u_resolution", [width, height])
+    theShader.setUniform("u_time", millis() / 1000.0)
+    theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+    scale(0.3)
+    translate(-40,300,-50)
+    rotateY(190)
+    //noStroke()
+    model(obj0) //middle dog
+    pop()
 
-  push()
-  shader(theShader)
+    push()
+    shader(theShader)
+    theShader.setUniform("u_resolution", [width, height])
+    theShader.setUniform("u_time", millis() / 1000.0)
+    theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+    scale(0.3)
+    translate(-40,310,-50)
+    rotateY(180)
+    //noStroke()
+    translate(450,-100,0)
+    model(obj0) //right dog
+    pop()
+    pop()
 
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(-40,300,-50)
-  rotateY(190)
-  //noStroke()
-  model(obj0)
-  pop()  //middle dog
-
-  push()
-  shader(theShader)
-
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(-40,310,-50)
-  rotateY(180)
-  //noStroke()
-  translate(450,-100,0)
-  model(obj0)
-  pop()  //right dog
-
-
-  pop()
-  push()
-  shader(theShader)
-
-  theShader.setUniform("u_resolution", [width, height])
-  theShader.setUniform("u_time", millis() / 1000.0)
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
-  scale(0.3)
-  translate(400,200,-50)
-  rotateY(180)
-  //noStroke()
-  model(obj0)
-  pop()  //left dog
-
-}
-  // the sub objects' rotation & position
+    push()
+    shader(theShader)
+    theShader.setUniform("u_resolution", [width, height])
+    theShader.setUniform("u_time", millis() / 1000.0)
+    theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)])
+    scale(0.3)
+    translate(400,200,-50)
+    rotateY(180)
+    //noStroke()
+    model(obj0) //left dog
+    pop()
+  }
 
   push()
   rotateY(140)
   rotateX(30)
   rotateZ(10)
   translate(-40,60,100)
-  model(obj2) //left
+  model(obj2) //left flower
   pop()
-
-  // push()
-  // rotateY(180)
-  // rotateX(10)
-  // rotateZ(10)
-  // translate(-60,60,130)
-  // model(obj2) // second left
-  // // translate(70,0,0)
-  // // model(obj2)
-  // pop()
 
   push()
   scale(1.3)
@@ -160,10 +144,8 @@ function draw () {
   rotateX(20)
   rotateZ(-10)
   translate(0,80,130)
-  model(obj2) // second right
+  model(obj2) // second right flower
   pop()
-
-
 
   push()
   scale(1.2)
@@ -171,19 +153,16 @@ function draw () {
   rotateX(40)
   rotateZ(-20)
   translate(20,100,100)
-  model(obj2) // right
+  model(obj2) // right flower
   pop()
-
 
   stroke(255,10) // make a stroke on the model
   scale(2)
   rotateX(190)
   translate(0,60,30)
   rotateY(-180)
-  model(obj3) // draws the obj to the screen
+  model(obj3) // ground
 
-
-  //box(100,200,100)
-  angle= angle +0.5
+  angle= angle +0.5 //rotation for head & dog
 
 }
